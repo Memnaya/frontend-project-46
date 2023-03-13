@@ -1,2 +1,2 @@
-# gendiff:
-# 	node bin/gendiff.js
+ gendiff:
+ 	node bin/gendiff.js
