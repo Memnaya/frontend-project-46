@@ -6,7 +6,7 @@ const getPath = fs.readFileSync(path.resolve(filepath), 'utf-8');
 const getParse = JSON.parse(data);
 
 
-const genDiff = (filepath1, filepath2) => {
+export default (filepath1, filepath2) => {
     const data1 = getParse(getPath(filepath1));
     const data2 = getParse(getPath(filepath2));
 
@@ -29,5 +29,3 @@ const genDiff = (filepath1, filepath2) => {
   
     return result;
   };
-
-  export { genDiff };
