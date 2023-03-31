@@ -1,31 +1,25 @@
-import fs  from 'fs';
-import path from 'path';
+import * as sub from "./sub-function.js"
 import _ from "lodash";
 
-const getPath = fs.readFileSync(path.resolve(filepath), 'utf-8');
-const getParse = JSON.parse(data);
+ export default (filepath1, filepath2) => {
+  const obj1 = sub.getJSONobj(filepath1);
+  const obj2 = sub.getJSONobj(filepath2);
 
-
-export default (filepath1, filepath2) => {
-    const data1 = getParse(getPath(filepath1));
-    const data2 = getParse(getPath(filepath2));
-
-    const keys1 = Object.keys(data1);
-    const keys2 = Object.keys(data2);
+    const keys1 = Object.keys(obj1);
+    const keys2 = Object.keys(obj2);
     const keys = _.union(keys1, keys2); 
-  
-    const result = {};
-    for (const key of keys) {
-      if (!Object.hasOwn(data1, key)) {
-        result[key] = 'lala';
-      } else if (!Object.hasOwn(data2, key)) {
-        result[key] = 'lala';
-      } else if (data1[key] !== data2[key]) {
-        result[key] = 'lala';
-      } else {
-        result[key] = 'lala';
+
+    const sortedKeys = _.sortBy(keys);
+    const diff = sortedKeys.reduce((acc, key) => {
+      if (!obj1.hasOwnProperty(key)) return {...acc, [`+ ${key}`]: obj2[key]};
+      if (!obj2.hasOwnProperty(key)) return { ...acc, [`- ${key}`]: obj1[key]};
+      if (obj1.hasOwnProperty(key) && obj2.hasOwnProperty(key)) {
+        return _.isEqual(obj1[key], obj2[key]) ? { ...acc, [`  ${key}`]: obj1[key]} : { ...acc, [`- ${key}`]: obj1[key], [`+ ${key}`]: obj2[key]};
       }
-    }
-  
-    return result;
+
+    }, {});
+    
+    return diff;
   };
+
+  
