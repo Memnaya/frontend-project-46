@@ -1,0 +1,19 @@
+name: gendiff-tests
+
+on: push 
+jobs:
+  build: 
+    runs-on: ubuntu-latest
+
+     strategy:
+
+      matrix:
+        node-version: [18.x]
+
+          steps:
+          - uses: actions/checkout@v3
+          - uses: actions/setup-node@v3
+          - run: make install
+          - run: make lint
+          - name: run tests
+            run: npm test
