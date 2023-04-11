@@ -9,13 +9,14 @@ export default (filepath1, filepath2) => {
   const keys2 = Object.keys(obj2);
   const keys = _.union(keys1, keys2);
 
-  const sortedKeys = _.sortBy(keys);
-  const diff = sortedKeys.reduce((acc, key) => {
-    if (!key in obj1) return { ...acc, [`+ ${key}`]: obj2[key] };
-    if (!key in obj2) return { ...acc, [`- ${key}`]: obj1[key] };
-    if (key in obj1 && key in obj2) {
-      return _.isEqual(obj1[key], obj2[key]) ? { ...acc, [`  ${key}`]: obj1[key] } : { ...acc, [`- ${key}`]: obj1[key], [`+ ${key}`]: obj2[key] };
+  const diff = keys.reduce((acc, key) => {
+    if (!_.has(obj1, key)) return {...acc, [`+ ${key}`]: obj2[key]};
+    if (!_.has(obj2, key)) return { ...acc, [`- ${key}`]: obj1[key]};
+    if (_.has(obj1, key) && _.has(obj2, key)) {
+      return _.isEqual(obj1[key], obj2[key]) ? { ...acc, [`  ${key}`]: obj1[key]} : { ...acc, [`- ${key}`]: obj1[key], [`+ ${key}`]: obj2[key]};
     }
-  }, {}); 
+    return {...acc};
+  }, {});
+  
   return diff;
-}; 
+}

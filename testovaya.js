@@ -27,16 +27,12 @@ const getDifference = (obj1, obj2) => {
       const sortedKeys = _.sortBy(keys);
 
       const diff = sortedKeys.reduce((acc, key) => {
-        console.log('текущий ключ');
-        console.log(key);
-      console.log('Проверка: ключ в объекте');
-      console.log(![key] in obj1);
-        if (!key in obj1) return {...acc, [`+ ${key}`]: obj2[key]};
-        if (!obj2.hasOwnProperty(key)) return { ...acc, [`- ${key}`]: obj1[key]};
-        if (obj1.hasOwnProperty(key) && obj2.hasOwnProperty(key)) {
-          return _.isEqual(obj1[key], obj2[key]) ? { ...acc, [`  ${key}`]: obj1[key]} : { ...acc, [`- ${key}`]: obj1[key], [`+ ${key}`]: obj2[key]};
+        if (!_.has(obj1, key)) return {...acc, [`+ ${key}`]: obj2[key]};
+        if (!_.has(obj2, key)) return { ...acc, [`- ${key}`]: obj1[key]};
+        if (_.has(obj1, key) && _.has(obj2, key)) {
+         return _.isEqual(obj1[key], obj2[key]) ? { ...acc, [`  ${key}`]: obj1[key]} : { ...acc, [`- ${key}`]: obj1[key], [`+ ${key}`]: obj2[key]};
         }
-
+        return {...acc};
       }, {});
       
       return diff;
@@ -45,7 +41,7 @@ const getDifference = (obj1, obj2) => {
     console.log(getDifference(obj1, obj2));
 
     
- /*   const doFormatting = (data, format = 'string') => {
+    const doFormatting = (data, format = 'string') => {
       let result = '';
       if (format === 'string') {
       const keys = Object.keys(data);
@@ -55,4 +51,4 @@ const getDifference = (obj1, obj2) => {
     };
 
     console.log('result format');
-    console.log(doFormatting(getDifference(obj1, obj2)));  */
+    console.log(doFormatting(getDifference(obj1, obj2)));  
