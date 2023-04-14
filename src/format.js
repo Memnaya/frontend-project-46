@@ -1,11 +1,13 @@
-import _ from 'lodash';
+// import _ from 'lodash';
 
 export default (data, format = 'string') => {
   let result = '';
+  const keys = Object.keys(data);
   if (format === 'string') {
-    const keys = _.sortBy(Object.keys(data));
-    keys.map((key) => result += `${key}: ${data[key]}\n`);
+    keys.map((key) => {
+      result += `${key}: ${data[key]}\n`;
+      return result;
+    });
   }
-   result = result.slice(0, -1);
-   return result;
+  return result.slice(0, -1);
 };

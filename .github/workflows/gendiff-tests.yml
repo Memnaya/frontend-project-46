@@ -1,11 +1,14 @@
+---
+
 name: gendiff-tests
 
-on: push 
+on: push
+
 jobs:
   build: 
     runs-on: ubuntu-latest
-
-     strategy:
+    
+      strategy:
 
       matrix:
         node-version: [18.x]
@@ -13,6 +16,8 @@ jobs:
           steps:
           - uses: actions/checkout@v3
           - uses: actions/setup-node@v3
+            with:
+              CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
           - run: make install
           - run: make lint
           - name: run tests

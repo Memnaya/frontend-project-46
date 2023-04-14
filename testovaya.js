@@ -25,6 +25,8 @@ const getDifference = (obj1, obj2) => {
       const keys = _.union(keys1, keys2);
   
       const sortedKeys = _.sortBy(keys);
+      
+      console.log(sortedKeys);
 
       const diff = sortedKeys.reduce((acc, key) => {
         if (!_.has(obj1, key)) return {...acc, [`+ ${key}`]: obj2[key]};
@@ -45,7 +47,9 @@ const getDifference = (obj1, obj2) => {
       let result = '';
       if (format === 'string') {
       const keys = Object.keys(data);
-      keys.map((key) => result += `${key}: ${data[key]}\n`);
+      keys.map((key) => {
+        result += `${key}: ${data[key]}\n`});
+        return result;
       }
       return result.slice(0, -1);
     };
