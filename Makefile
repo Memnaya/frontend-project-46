@@ -13,5 +13,5 @@ lint:
 test-coverage:
 	npx jest --coverage
 
-test
+test:
 	npm test --watch
