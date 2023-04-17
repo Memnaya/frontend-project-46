@@ -11,7 +11,7 @@ import doFormatting from '../src/format.js';
 
 describe('format', () => {
   const result = '- follow: false\n  host: hexlet.io\n- proxy: 123.234.53.22\n- timeout: 50\n+ timeout: 20\n+ verbose: true';
-  
+
   test('string type', () => {
     const data = {
       '- follow': false,
@@ -22,6 +22,6 @@ describe('format', () => {
       '+ verbose': true,
     };
     expect(doFormatting(data)).toEqual(result);
-    //expect(doFormatting(data), 'string').toBe
+    // expect(doFormatting(data), 'string').toBe
   });
 });
