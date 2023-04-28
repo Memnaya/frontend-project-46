@@ -1,6 +1,6 @@
 // import _ from 'lodash';
 
-export default (data, format = 'string') => {
+export default (data, format) => {
   let result = '';
   const keys = Object.keys(data);
   if (format === 'string') {
