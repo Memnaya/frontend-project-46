@@ -14,4 +14,4 @@ test-coverage:
 	npx jest --coverage
 
 test:
-	npm test --watch
+	npm test
