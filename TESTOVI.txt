@@ -1,0 +1,20 @@
+{
+  common: {
+    type: 'nested',
+    value: {
+      follow: [Object],
+      setting1: [Object],
+      setting2: [Object],
+      setting3: [Object],
+      setting4: [Object],
+      setting5: [Object],
+      setting6: [Object]
+    }
+  },
+  group1: {
+    type: 'nested',
+    value: { baz: [Object], foo: [Object], nest: [Object] }
+  },
+  group2: { type: 'removed', value: { abc: 12345, deep: [Object] } },
+  group3: { type: 'added', value: { deep: [Object], fee: 100500 } }
+}
