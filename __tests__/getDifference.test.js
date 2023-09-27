@@ -39,6 +39,13 @@ describe('formaters', () => {
     const reference = readFile('plain.txt');
     expect(doFormating(getDifference(file1, file2), 'plain')).toEqual(reference);
   });
+
+  test('json type', () => {
+    const file1 = parser(readFile('file1.json'), 'json');
+    const file2 = parser(readFile('file2.json'), 'json');
+    const reference = readFile('json.txt');
+    expect(doFormating(getDifference(file1, file2), 'json')).toEqual(reference);
+  });
 });
 
 describe('parser', () => {
