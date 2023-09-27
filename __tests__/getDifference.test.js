@@ -25,12 +25,19 @@ describe('tree structures', () => {
   });
 });
 
-describe('style', () => {
-  test('string type', () => {
+describe('formaters', () => {
+  test('stylish type', () => {
     const file1 = parser(readFile('file1.json'), 'json');
     const file2 = parser(readFile('file2.json'), 'json');
-    const reference = readFile('expected.json.txt');
+    const reference = readFile('stylish.txt');
     expect(doFormating(getDifference(file1, file2), 'stylish')).toEqual(reference);
+  });
+
+  test('plain type', () => {
+    const file1 = parser(readFile('file1.json'), 'json');
+    const file2 = parser(readFile('file2.json'), 'json');
+    const reference = readFile('plain.txt');
+    expect(doFormating(getDifference(file1, file2), 'plain')).toEqual(reference);
   });
 });
 
