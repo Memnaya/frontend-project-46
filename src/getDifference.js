@@ -1,12 +1,11 @@
 import _ from 'lodash';
 
-const buidTree = (data1, data2) => {
-  const keys1 = Object.keys(data1);
-  const keys2 = Object.keys(data2);
-  const keys = _.union(keys1, keys2);
-  const sortedKeys = _.sortBy(keys);
+const getKeys = (data1, data2) => _.sortBy(_.union(_.keys(data1), _.keys(data2)));
 
-  const diff = sortedKeys.map((key) => {
+const buidTree = (data1, data2) => {
+  const keys = getKeys(data1, data2);
+
+  const diff = keys.map((key) => {
     if (!_.has(data1, key)) {
       return { type: 'added', key, value: data2[key] };
     }
@@ -33,9 +32,3 @@ const getDifferenceTree = (data1, data2) => ({
 });
 
 export default getDifferenceTree;
-
-// если нет в первом, значит точно есть во втором [`+ ${key}`]: data2[key] }
-// если нет во втором значит точно есть в первом [`- ${key}`]: data1[key] }
-// если есть оба ключа, но отличаются содержимым ==>
-//                     [`- ${key}`]: data1[key], [`+ ${key}`]: data2[key]
-//                      если одинаковые: *два пробела*${key}`]: data1[key]
