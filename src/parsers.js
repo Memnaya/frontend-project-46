@@ -9,5 +9,5 @@ export default (data, format) => {
       return yaml.load(data);
     default:
       throw new Error(`Format: ${format} is not supported!`);
-  };
+  }
 };

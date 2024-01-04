@@ -11,5 +11,5 @@ export default function doFormating(tree, format) {
       return makeStylish(tree);
     default:
       throw new Error(`Format: ${format} is not supported!`);
-  };
-};
+  }
+}
