@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 import fs from 'fs';
 import getDifference from '../src/getDifference.js';
 import parser from '../src/parsers.js';
-import doFormating from '../src/formating.js';
+import doFormating from '../src/formaters/formating.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
