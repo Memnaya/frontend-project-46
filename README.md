@@ -14,5 +14,5 @@ For help, type:
 ```
 ### Work examples:
 [plain files example](https://asciinema.org/a/dZ9HBo3AeMPhnrmAddKTu4H4P)
-## Flags:
+#### Flags:
 ['stylish'](https://asciinema.org/a/DpbbjvhbJiVdRnRfxchiBC3YH), ['plain'](https://asciinema.org/a/DpbbjvhbJiVdRnRfxchiBC3YH), ['json'](https://asciinema.org/a/mrK5knavuAMfpdILJyy6NB07c)
