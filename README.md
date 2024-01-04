@@ -14,7 +14,9 @@ For help, type:
 ```
 ### Work examples:
 ```
-work(plain files) [example](https://asciinema.org/a/dZ9HBo3AeMPhnrmAddKTu4H4P)
+work(plain files) <video width="320" height="240" controls>
+                     <source src="https://asciinema.org/a/dZ9HBo3AeMPhnrmAddKTu4H4P">
+                  </video>
 flags: 'stylish' [example](https://asciinema.org/a/DpbbjvhbJiVdRnRfxchiBC3YH)
        'plain'   [example](https://asciinema.org/a/DpbbjvhbJiVdRnRfxchiBC3YH)
        'json'    [example](https://asciinema.org/a/mrK5knavuAMfpdILJyy6NB07c)
