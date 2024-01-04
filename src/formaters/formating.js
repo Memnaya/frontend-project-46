@@ -1,5 +1,5 @@
-import makeStylish from './formaters/stylish.js';
-import makePlain from './formaters/plain.js';
+import makeStylish from './stylish.js';
+import makePlain from './plain.js';
 
 export default function doFormating(tree, format) {
   if (format === 'plain') return makePlain(tree);

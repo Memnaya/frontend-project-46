@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import process from 'process';
-import doFormating from './formating.js';
+import doFormating from './formaters/formating.js';
 import parser from './parsers.js';
 import getDifference from './getDifference.js';
 
