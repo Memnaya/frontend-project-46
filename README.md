@@ -13,7 +13,6 @@ For help, type:
  gendiff -h
 ```
 ### Work examples:
-```
 work(plain files) <video width="320" height="240" controls>
                      <source src="https://asciinema.org/a/dZ9HBo3AeMPhnrmAddKTu4H4P">
                   </video>
