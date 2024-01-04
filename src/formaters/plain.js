@@ -36,7 +36,7 @@ export function makePlainDiff(tree) {
 
 export default function makePlain(data) {
   const result = makePlainDiff(data);
-  const flatten = _.flattenDeep(result);
-  const filtered = flatten.filter((el) => el);
-  return filtered.join('\n');
+  const flattenTree = _.flattenDeep(result);
+  const filteredTree = flattenTree.filter((el) => el);
+  return filteredTree.join('\n');
 }

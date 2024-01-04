@@ -18,9 +18,14 @@ describe('tree structures', () => {
     const file2 = parser(readFile('file2.json'), 'json');
     expect(getDifference(file1, file2)).toBeInstanceOf(Object);
   });
-  test('yaml/yml type', () => {
+  test('yaml type', () => {
     const file1 = parser(readFile('file1.yaml'), 'yaml');
     const file2 = parser(readFile('file2.yaml'), 'yaml');
+    expect(getDifference(file1, file2)).toBeInstanceOf(Object);
+  });
+  test('yml type', () => {
+    const file1 = parser(readFile('file1.yaml'), 'yml');
+    const file2 = parser(readFile('file2.yaml'), 'yml');
     expect(getDifference(file1, file2)).toBeInstanceOf(Object);
   });
 });
