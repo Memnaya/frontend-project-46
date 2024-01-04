@@ -13,7 +13,6 @@ For help, type:
  gendiff -h
 ```
 ### Work examples:
-work(plain files) [example](https://asciinema.org/a/dZ9HBo3AeMPhnrmAddKTu4H4P)
-flags: 'stylish' [example](https://asciinema.org/a/DpbbjvhbJiVdRnRfxchiBC3YH)
-       'plain'   [example](https://asciinema.org/a/DpbbjvhbJiVdRnRfxchiBC3YH)
-       'json'    [example](https://asciinema.org/a/mrK5knavuAMfpdILJyy6NB07c)
+[plain files example](https://asciinema.org/a/dZ9HBo3AeMPhnrmAddKTu4H4P)
+## Flags:
+['stylish'](https://asciinema.org/a/DpbbjvhbJiVdRnRfxchiBC3YH), ['plain'](https://asciinema.org/a/DpbbjvhbJiVdRnRfxchiBC3YH), ['json'](https://asciinema.org/a/mrK5knavuAMfpdILJyy6NB07c)
