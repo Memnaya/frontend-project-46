@@ -7,10 +7,14 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/f96e2455eb3dc3379d6a/test_coverage)](https://codeclimate.com/github/Memnaya/frontend-project-46/test_coverage)
 
 ### Description:
-Program calculates differences between json files.
+Program calculates differences between for two files. The package supports several file extensions: json, yaml and yml. The package also supports several output forms: stylish, plain, json.
 For help, type:
-```
+```bash
  gendiff -h
+```
+### Start:
+```bash
+make install
 ```
 ### Work examples:
 [plain files example](https://asciinema.org/a/dZ9HBo3AeMPhnrmAddKTu4H4P)
